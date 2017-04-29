@@ -88,7 +88,13 @@
     <Compile Include="Assets\NoesisGUI\UserControls\HSVControl\HSVControl.cs" />
     <Compile Include="Assets\NoesisGUI\UserControls\ImageViewer\ImageViewer.xaml.cs" />
     <Compile Include="Assets\NoesisGUI\UserControls\NineSlice\NineSlice.cs" />
-    <Compile Include="Assets\Resources\Views\MainView.xaml.cs" />
+    <Compile Include="Assets\Resources\UI\Routes.cs" />
+    <Compile Include="Assets\Resources\UI\Tools\Navigator.cs" />
+    <Compile Include="Assets\Resources\UI\ViewModels\Core\Command.cs" />
+    <Compile Include="Assets\Resources\UI\ViewModels\Core\ViewModel.cs" />
+    <Compile Include="Assets\Resources\UI\ViewModels\MainViewModel.cs" />
+    <Compile Include="Assets\Resources\UI\Views\MainView.xaml.cs" />
+    <Compile Include="Assets\Resources\UI\Views\SettingsView.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\NoesisGUI\assets.txt" />

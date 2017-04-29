@@ -5,7 +5,6 @@ Assets/NoesisGUI/UserControls/ColorPicker/ColorPicker.xaml
 Assets/NoesisGUI/UserControls/HSVControl/HSVControl.xaml
 Assets/NoesisGUI/UserControls/ImageViewer/ImageViewer.xaml
 Assets/NoesisGUI/UserControls/NineSlice/NineSlice.xaml
-Assets/Resources/Views/MainView.xaml
 Assets/NoesisGUI/Samples/ControlGallery/Samples/Images/transparent-img.png [dx11]
 Assets/NoesisGUI/Samples/ControlGallery/Samples/Images/tile.png [dx11]
 Assets/NoesisGUI/Samples/ControlGallery/Samples/Images/Aladin/aladin-atlas.png [dx11]
@@ -154,3 +153,5 @@ Assets/NoesisGUI/Samples/NineSlice/SignBackground.png [android]
 Assets/NoesisGUI/Samples/QuestLog/Images/Image0.png [android]
 Assets/NoesisGUI/Samples/QuestLog/Images/Image1.png [android]
 Assets/NoesisGUI/Samples/QuestLog/Images/Image2.png [android]
+Assets/Resources/UI/Views/MainView.xaml
+Assets/Resources/UI/Views/SettingsView.xaml

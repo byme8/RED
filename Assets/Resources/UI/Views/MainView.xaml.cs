@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using REDBlend.Assets.UI.ViewModels;
 
 namespace REDBlend.Assets.Views
 {
@@ -9,7 +10,8 @@ namespace REDBlend.Assets.Views
     {
         public MainView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+            this.DataContext = new MainViewModel();
         }
     }
 }

@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 1190995934}
   - component: {fileID: 1190995933}
   - component: {fileID: 1190995932}
+  - component: {fileID: 1190995938}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -139,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4531e16294bb7024784cfdd715e92b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xamlFile: Assets/Resources/Views/MainView.xaml
-  _xaml: {fileID: 102900000, guid: 8c09b65142c1016429e3d7c03f0cc5eb, type: 3}
+  _xamlFile: 
+  _xaml: {fileID: 0}
   _styleFile: 
   _style: {fileID: 0}
   _offscreenSize: {x: 1, y: 1}
@@ -225,6 +226,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1190995938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190995931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77cd9e29da19bf4fb145783d20a3078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1933375083
 GameObject:
   m_ObjectHideFlags: 0
