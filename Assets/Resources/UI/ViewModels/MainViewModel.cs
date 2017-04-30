@@ -9,7 +9,7 @@ namespace REDBlend.Assets.UI.ViewModels
     {
         public MainViewModel()
         {
-            this.Play = new Command(_ => Debug.Log("hello"));
+            this.Play = new Command(_ => Navigator.Instance.Navigate(Routes.Categories));
             this.Settings = new Command(_ => Navigator.Instance.Navigate(Routes.Settings));
             this.Quit = new Command(_ => Application.Quit());
         }

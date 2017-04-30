@@ -90,9 +90,11 @@
     <Compile Include="Assets\NoesisGUI\UserControls\NineSlice\NineSlice.cs" />
     <Compile Include="Assets\Resources\UI\Routes.cs" />
     <Compile Include="Assets\Resources\UI\Tools\Navigator.cs" />
+    <Compile Include="Assets\Resources\UI\ViewModels\CategoriesViewModel.cs" />
     <Compile Include="Assets\Resources\UI\ViewModels\Core\Command.cs" />
     <Compile Include="Assets\Resources\UI\ViewModels\Core\ViewModel.cs" />
     <Compile Include="Assets\Resources\UI\ViewModels\MainViewModel.cs" />
+    <Compile Include="Assets\Resources\UI\Views\CategoriesView.xaml.cs" />
     <Compile Include="Assets\Resources\UI\Views\MainView.xaml.cs" />
     <Compile Include="Assets\Resources\UI\Views\SettingsView.xaml.cs" />
   </ItemGroup>

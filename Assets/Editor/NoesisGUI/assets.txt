@@ -155,3 +155,4 @@ Assets/NoesisGUI/Samples/QuestLog/Images/Image1.png [android]
 Assets/NoesisGUI/Samples/QuestLog/Images/Image2.png [android]
 Assets/Resources/UI/Views/MainView.xaml
 Assets/Resources/UI/Views/SettingsView.xaml
+Assets/Resources/UI/Views/CategoriesView.xaml

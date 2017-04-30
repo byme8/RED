@@ -88,6 +88,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Assets\Resources\UI\Views\CategoriesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Assets\Resources\UI\Views\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -646,9 +650,13 @@
     <Compile Include="Assets\Plugins\NoesisGUI\Scripts\Proxies\WrapPanel.cs" />
     <Compile Include="Assets\Resources\UI\Routes.cs" />
     <Compile Include="Assets\Resources\UI\Tools\Navigator.cs" />
+    <Compile Include="Assets\Resources\UI\ViewModels\CategoriesViewModel.cs" />
     <Compile Include="Assets\Resources\UI\ViewModels\Core\Command.cs" />
     <Compile Include="Assets\Resources\UI\ViewModels\Core\ViewModel.cs" />
     <Compile Include="Assets\Resources\UI\ViewModels\MainViewModel.cs" />
+    <Compile Include="Assets\Resources\UI\Views\CategoriesView.xaml.cs">
+      <DependentUpon>CategoriesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Assets\Resources\UI\Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
