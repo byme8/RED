@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour {
 
+    public GameObject SettingsPage;
+
     public void Play()
     {
         Debug.Log("Play");
@@ -11,7 +13,8 @@ public class MainMenuController : MonoBehaviour {
 
     public void Settings()
     {
-        Debug.Log("Settings");
+        this.gameObject.SetActive(false);
+        this.SettingsPage.SetActive(true);
     }
 
     public void Quit()
