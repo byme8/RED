@@ -26,5 +26,10 @@ namespace UnityEngine
         {
             gameObject.SetActive(false);
         }
+
+        public static GameObject Clone(this GameObject gameObject)
+        {
+            return GameObject.Instantiate(gameObject);
+        }
     }
 }
