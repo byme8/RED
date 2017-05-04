@@ -8,9 +8,9 @@ namespace UserInput
 	{
 		private Camera Camera;
 
-		public MouseInputProvider(Camera camera)
+		public MouseInputProvider()
 		{
-			this.Camera = camera;
+			this.Camera = GameObject.FindObjectOfType<Camera>();
 		}
 
 		public Vector3 Position

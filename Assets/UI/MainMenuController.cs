@@ -8,10 +8,16 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour {
 
     public GameObject SettingsPage;
+    private LevelsManager LevelManager;
+
+    private void Start()
+    {
+        this.LevelManager = FindObjectOfType<LevelsManager>();
+    }
 
     public void Play()
     {
-        SceneManager.LoadScene(LevelsManager.Levels.First(), LoadSceneMode.Additive);
+        SceneManager.LoadScene(this.LevelManager.Levels.First(), LoadSceneMode.Additive);
         this.gameObject.Disable();
     }
 

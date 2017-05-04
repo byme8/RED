@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using Coroutines;
 using Tweens;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -22,11 +21,14 @@ public class GameController : MonoBehaviour
 
     public IEnumerator LanuchBullet(Vector3 startPosition, Vector3 direction)
     {
-        this.Bullet.Enable();
-        yield return this.Bullet.Move(startPosition, this.BulletSpawTime);
-        this.BulletRigibody.velocity = direction.normalized * this.BulletSpeed;
-        yield return new WaitUntil(() => this.Bullet.transform.position.magnitude > 10);
+        this.BulletRigibody.velocity = Vector3.zero;
         this.Bullet.transform.position = Vector3.zero;
+        this.Bullet.Enable();
+
+        yield return
+                    this.Bullet.Move(startPosition, this.BulletSpawTime, curve: Curves.BackOut);
+        this.BulletRigibody.velocity = direction.normalized * this.BulletSpeed;
+        yield return new WaitUntil(() => this.Bullet.transform.position.magnitude > 30);
         this.Bullet.Disable();
     }
 }

@@ -8,19 +8,15 @@ using UnityEngine;
 
 namespace RED.Levels
 {
-    public class LevelsManager
+    public class LevelsManager : MonoBehaviour
     {
         const string LevelsStorageFileName = "Assets/Game/Levels/Scenes.json";
 
-        static LevelsManager()
-        {
-            if (!File.Exists(LevelsStorageFileName))
-                return;
+        public TextAsset Scenes;
 
-            using (var input = new StreamReader(LevelsStorageFileName))
-            {
-                Levels = JsonConvert.DeserializeObject<string[]>(input.ReadToEnd(), Settings);
-            }
+        void Start()
+        {
+            this.Levels = JsonConvert.DeserializeObject<string[]>(this.Scenes.text, Settings);
         }
 
         static JsonSerializerSettings Settings = new JsonSerializerSettings
@@ -29,6 +25,7 @@ namespace RED.Levels
             Formatting = Formatting.Indented
         };
 
+#if UNITY_EDITOR
         [UnityEditor.MenuItem("Assets/Update Scene Names")]
         private static void UpdateNames(UnityEditor.MenuCommand command)
         {
@@ -39,8 +36,9 @@ namespace RED.Levels
                 output.WriteLine(json);
             }
         }
+#endif
 
-        public static IEnumerable<string> Levels
+        public IEnumerable<string> Levels
         {
             get;
             private set;
