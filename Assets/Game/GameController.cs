@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     public float BulletSpawTime;
     public float BulletSpeed;
 
+    public Vector3 BulletSpawScale;
+
     private GameObject Bullet;
     private Rigidbody2D BulletRigibody;
 
@@ -22,11 +24,13 @@ public class GameController : MonoBehaviour
     public IEnumerator LanuchBullet(Vector3 startPosition, Vector3 direction)
     {
         this.BulletRigibody.velocity = Vector3.zero;
-        this.Bullet.transform.position = Vector3.zero;
+        this.Bullet.transform.localPosition = Vector3.zero;
+        this.Bullet.transform.localScale = Vector3.zero;
         this.Bullet.Enable();
 
-        yield return
-                    this.Bullet.Move(startPosition, this.BulletSpawTime, curve: Curves.BackOut);
+        yield return Parallel.Create(
+                    this.Bullet.Move(startPosition, this.BulletSpawTime, curve: Curves.BackOut),
+                    this.Bullet.Scale(this.BulletSpawScale, this.BulletSpawTime, curve: Curves.BackOut));
         this.BulletRigibody.velocity = direction.normalized * this.BulletSpeed;
         yield return new WaitUntil(() => this.Bullet.transform.position.magnitude > 30);
         this.Bullet.Disable();

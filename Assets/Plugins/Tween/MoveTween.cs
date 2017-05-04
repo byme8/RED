@@ -8,7 +8,7 @@ namespace Tweens
 {
     public static class MoveTween
     {
-        public static IEnumerator Move(this GameObject gameObject,
+        public static ICoroutine Move(this GameObject gameObject,
                 Vector3 position,
                 float time,
                 float delay = 0,
@@ -37,13 +37,13 @@ namespace Tweens
                 curve = Curves.BackIn;
 
             var timeSpent = 0.0f;
-            var start = transform.position;
+            var start = transform.localPosition;
             var delta = position - start;
             while (timeSpent < time)
             {
                 var shift = curve.Caclculate(timeSpent / time);
                 var currentValue = start + delta * shift;
-                transform.position = currentValue;
+                transform.localPosition = currentValue;
                 timeSpent += Time.deltaTime;
                 yield return null;
             }
