@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Coroutines
 {
-    class CoroutineTask : CustomYieldInstruction, ICoroutine
+    public class CoroutineTask : CustomYieldInstruction, ICoroutine
     {
         private bool _keepWaiting = true;
 

@@ -16,15 +16,14 @@ namespace Tweens
         {
             var transform = gameObject.transform;
 
-            return new[]{
-                Delay.Start(delay),
+            return Sequence.Create(
+                Delay.Create(delay),
                 CoroutinesFactory.StartSuperFastCoroutine(ProcessMoving(
                     transform,
                     position,
                     time,
                     delay,
-                    curve))}.
-                Wait();
+                    curve)));
         }
 
         private static IEnumerator ProcessMoving(

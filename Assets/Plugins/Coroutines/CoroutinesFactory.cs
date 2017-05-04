@@ -5,22 +5,22 @@ using UnityEngine;
 
 namespace Coroutines
 {
-	public static class CoroutinesFactory
-	{
-		static CoroutineHolder CoroutineHolder;
+    public static class CoroutinesFactory
+    {
+        static CoroutineHolder CoroutineHolder;
 
-		static CoroutinesFactory()
-		{
-			var gameObject =  new GameObject("~Coroutines");
-			CoroutineHolder = gameObject.AddComponent<CoroutineHolder>();
-		}
+        static CoroutinesFactory()
+        {
+            var gameObject = new GameObject("~Coroutines");
+            CoroutineHolder = gameObject.AddComponent<CoroutineHolder>();
+        }
 
-		public static ICoroutine StartSuperFastCoroutine(IEnumerator enumerator)
-		{
+        public static CoroutineTask StartSuperFastCoroutine(IEnumerator enumerator)
+        {
             var coroutine = new CoroutineTask(enumerator);
-			CoroutineHolder.AddSuperFastCoroutine(coroutine);
-			return coroutine;
-		}
+            CoroutineHolder.AddSuperFastCoroutine(coroutine);
+            return coroutine;
+        }
 
         public static Coroutine StartCoroutine(IEnumerator coroutine)
         {

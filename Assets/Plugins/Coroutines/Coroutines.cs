@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class Delay
 {
-    public static ICoroutine Start(float delay)
+    public static ICoroutine Create(float delay)
     {
         return CoroutinesFactory.StartSuperFastCoroutine(ProcessDelay(delay));
     }
