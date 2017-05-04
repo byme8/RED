@@ -65,6 +65,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletTemplate: {fileID: 1781349835084376, guid: 9e7649620010bca4989f58a3ead64a3f,
     type: 2}
-  BulletSpawTime: 0.5
-  BulletSpeed: 10
+  BulletSpawTime: 1
+  BulletSpeed: 40
   BulletSpawScale: {x: 0.3, y: 0.3, z: 1}

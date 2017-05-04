@@ -29,8 +29,8 @@ public class GameController : MonoBehaviour
         this.Bullet.Enable();
 
         yield return Parallel.Create(
-                    this.Bullet.Move(startPosition, this.BulletSpawTime, curve: Curves.BackOut),
-                    this.Bullet.Scale(this.BulletSpawScale, this.BulletSpawTime, curve: Curves.BackOut));
+                    this.Bullet.Move(startPosition, this.BulletSpawTime, curve: Curves.CircularIn),
+                    this.Bullet.Scale(this.BulletSpawScale, this.BulletSpawTime, curve: Curves.CircularIn));
         this.BulletRigibody.velocity = direction.normalized * this.BulletSpeed;
         yield return new WaitUntil(() => this.Bullet.transform.position.magnitude > 30);
         this.Bullet.Disable();
