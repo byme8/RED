@@ -22,5 +22,15 @@ namespace Coroutines
                 yield return null;
             }
         }
+
+        public static ICoroutine ParallelCoroutines(this IEnumerable<ICoroutine> coroutines)
+        {
+            return Create(coroutines.ToArray());
+        }
+
+        public static ICoroutine ParallelCoroutines(this IEnumerable<IEnumerator> coroutines)
+        {
+            return Create(coroutines.Cast<ICoroutine>().ToArray());
+        }
     }
 }

@@ -6,7 +6,9 @@ namespace UserInput
 {
     public class UserInputController : MonoBehaviour
     {
-        public IEnumerator Start()
+        private Coroutine handeling;
+
+        IEnumerator Handeling()
         {
             var gameController = GameController.FindObjectOfType<GameController>();
             var inputProvider = this.CreateProvider();
@@ -49,6 +51,16 @@ namespace UserInput
 
             Debug.LogError("Mouse");
             return new MouseInputProvider();
+        }
+
+        public void StartHandeling()
+        {
+            this.handeling = this.StartCoroutine(this.Handeling());
+        }
+
+        public void StopHandeling()
+        {
+            this.StopCoroutine(this.handeling);
         }
     }
 }

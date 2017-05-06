@@ -44,5 +44,10 @@ namespace Coroutines
                 if (task.keepWaiting)
                     yield return task;
         }
+
+        public static ICoroutine ToCoroutine(this IEnumerator enumerator)
+        {
+            return new CoroutineTask(enumerator);
+        }
     }
 }
