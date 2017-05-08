@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Coroutines.Abstractions;
+using UnityEngine;
 
 namespace Coroutines
 {
@@ -11,6 +12,18 @@ namespace Coroutines
         public static ICoroutine Create(params ICoroutine[] coroutines)
         {
             return CoroutinesFactory.StartSuperFastCoroutine(ProcessParallel(coroutines));
+        }
+
+        public static ICoroutine Create(params IEnumerator[] coroutines)
+        {
+            return CoroutinesFactory.StartSuperFastCoroutine(ProcessParallel(coroutines));
+        }
+
+        private static IEnumerator ProcessParallel(IEnumerator[] coroutines)
+        {
+            var list = coroutines.Select(o => CoroutinesFactory.StartCoroutine(o)).ToArray();
+            foreach (var coroutine in list)
+                yield return coroutine;
         }
 
         private static IEnumerator ProcessParallel(ICoroutine[] coroutines)
@@ -30,7 +43,7 @@ namespace Coroutines
 
         public static ICoroutine ParallelCoroutines(this IEnumerable<IEnumerator> coroutines)
         {
-            return Create(coroutines.Cast<ICoroutine>().ToArray());
+            return Create(coroutines.ToArray());
         }
     }
 }
