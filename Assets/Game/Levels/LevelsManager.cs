@@ -16,7 +16,7 @@ namespace RED.Levels
 
         void Start()
         {
-            this.Levels = JsonConvert.DeserializeObject<string[]>(this.Scenes.text, Settings);
+            this.Levels = JsonConvert.DeserializeObject<string[]>(this.Scenes.text, Settings).Select(o => new Level(o));
         }
 
         static JsonSerializerSettings Settings = new JsonSerializerSettings
@@ -38,7 +38,7 @@ namespace RED.Levels
         }
 #endif
 
-        public IEnumerable<string> Levels
+        public IEnumerable<Level> Levels
         {
             get;
             private set;

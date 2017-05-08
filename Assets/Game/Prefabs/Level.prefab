@@ -9,63 +9,58 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1173296226734244}
+  m_RootGameObject: {fileID: 1910972891939536}
   m_IsPrefabParent: 1
---- !u!1 &1173296226734244
+--- !u!1 &1910972891939536
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4205627251728840}
-  - component: {fileID: 114712752893793830}
-  - component: {fileID: 114937468943584412}
+  - component: {fileID: 4189188635163568}
+  - component: {fileID: 114567535392108268}
+  - component: {fileID: 114459252270406366}
   m_Layer: 0
-  m_Name: Game
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4205627251728840
+--- !u!4 &4189188635163568
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173296226734244}
+  m_GameObject: {fileID: 1910972891939536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.1775024, y: 0.8136289, z: 1.2734375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114712752893793830
+--- !u!114 &114459252270406366
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173296226734244}
+  m_GameObject: {fileID: 1910972891939536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b152ac355af65184eb89945391509925, type: 3}
+  m_Script: {fileID: 11500000, guid: a68732b2e8b4ad94288847c2a4a51565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletTemplate: {fileID: 1781349835084376, guid: 9e7649620010bca4989f58a3ead64a3f,
-    type: 2}
-  BulletSpawTime: 1
-  BulletSpeed: 40
-  BulletSpawScale: {x: 0.3, y: 0.3, z: 1}
---- !u!114 &114937468943584412
+  UserInputController: {fileID: 114567535392108268}
+--- !u!114 &114567535392108268
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173296226734244}
+  m_GameObject: {fileID: 1910972891939536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e76e45c866ab804793c9128c9a50956, type: 3}
+  m_Script: {fileID: 11500000, guid: f408d604de98daf4cafe73e644869625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scenes: {fileID: 4900000, guid: 6f64b9d4d30fddc46a6cce808df76102, type: 3}
