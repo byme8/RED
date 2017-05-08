@@ -23,6 +23,12 @@ namespace RED.Levels
             this.UserInputController.StartHandeling();
         }
 
+        public IEnumerator Monitoring()
+        {
+            var points = GameObject.FindObjectsOfType<Point>();
+            yield return new WaitUntil(() => points.All(o => o.Taken));
+        }
+
         public  IEnumerator Hide()
         {
             yield return this.entities.Select(o => o.Hide()).ParallelCoroutines();

@@ -29,7 +29,7 @@ public class MainMenuController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         this.gameObject.Disable();
-        yield return this.GameController.Play();
+        yield return this.GameController.Play(0);
     }
 
     public void Settings()

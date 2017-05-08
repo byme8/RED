@@ -6,6 +6,7 @@ using RED.Entities;
 using RED.Game.Entities;
 using RED.Levels;
 using Tweens;
+using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UserInput;
@@ -30,15 +31,20 @@ public class GameController : MonoBehaviour
         this.levelManager = FindObjectOfType<LevelsManager>();
     }
 
-    public IEnumerator Play()
+    public IEnumerator Play(int level)
     {
-        if (this.currentLevel != null)
-        {
-            yield return this.currentLevel.Unload();
-        }
-        this.currentLevel = this.levelManager.Levels.First();
+        this.currentLevel = this.levelManager.Levels.Skip(level).First();
 
-        yield return currentLevel.Load();
+        yield return this.currentLevel.Load();
+        this.currentLevel.Finished.
+            Delay(TimeSpan.FromSeconds(0.5)).
+            Subscribe(_ => this.StartCoroutine(this.NextLevel(level)));
+    }
+
+    private IEnumerator NextLevel(int currentLevel)
+    {
+        yield return this.currentLevel.Unload();
+        yield return this.Play(currentLevel + 1);
     }
 
     public IEnumerator LanuchBullet(Vector3 startPosition, Vector3 direction)

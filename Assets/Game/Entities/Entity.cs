@@ -16,6 +16,7 @@ namespace RED.Entities
 
         public IEnumerator Show()
         {
+            this.Enable();
             var position = this.gameObject.transform.localPosition;
             var scale = this.gameObject.transform.localScale;
 
@@ -30,6 +31,7 @@ namespace RED.Entities
         {
             yield return Parallel.Create(this.gameObject.Move(Vector3.zero, this.SpawnTime, curve: Curves.CircularIn),
                                    this.gameObject.Scale(Vector3.zero, this.SpawnTime, curve: Curves.CircularIn));
+            this.Disable();
         }
 
     }

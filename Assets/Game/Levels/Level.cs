@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Coroutines;
+using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +26,15 @@ namespace RED.Levels
             this.levelController = GameObject.FindObjectOfType<LevelController>();
 
             yield return this.levelController.Show();
+
+            this.Finished = Observable.FromCoroutine(() => this.levelController.Monitoring());
+            this.Finished.Subscribe();
+        }
+
+        public IObservable<Unit> Finished
+        {
+            get;
+            private set;
         }
 
         public IEnumerator Unload()

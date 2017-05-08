@@ -14,9 +14,9 @@ namespace Coroutines
             return CoroutinesFactory.StartSuperFastCoroutine(ProcessParallel(coroutines));
         }
 
-        public static ICoroutine Create(params IEnumerator[] coroutines)
+        public static Coroutine Create(params IEnumerator[] coroutines)
         {
-            return CoroutinesFactory.StartSuperFastCoroutine(ProcessParallel(coroutines));
+            return CoroutinesFactory.StartCoroutine(ProcessParallel(coroutines));
         }
 
         private static IEnumerator ProcessParallel(IEnumerator[] coroutines)
@@ -41,7 +41,7 @@ namespace Coroutines
             return Create(coroutines.ToArray());
         }
 
-        public static ICoroutine ParallelCoroutines(this IEnumerable<IEnumerator> coroutines)
+        public static Coroutine ParallelCoroutines(this IEnumerable<IEnumerator> coroutines)
         {
             return Create(coroutines.ToArray());
         }
