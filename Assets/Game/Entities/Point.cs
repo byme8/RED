@@ -8,5 +8,11 @@ namespace RED.Entities
     public class Point : Entity
     {
         public bool Taken;
+
+        public void Take()
+        {
+            this.Taken = true;
+            this.StartCoroutine(this.Hide());
+        }
     }
 }

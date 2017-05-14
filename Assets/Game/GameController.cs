@@ -14,52 +14,42 @@ using UserInput;
 public class GameController : MonoBehaviour
 {
     public GameObject BulletTemplate;
-    public float BulletSpawTime;
-    public float BulletSpeed;
-    public Vector3 BulletSpawScale;
-
-    private Rigidbody2D BulletRigibody;
     private LevelsManager levelManager;
-    private GameObject Bullet;
+    private Bullet Bullet;
+
     private Level currentLevel;
+    private int currentLevelIndex;
 
     private void Start()
     {
-        this.Bullet = this.BulletTemplate.Clone();
+        this.Bullet = this.BulletTemplate.Clone().GetComponent<Bullet>();
         this.Bullet.Disable();
-        this.BulletRigibody = this.Bullet.GetComponent<Rigidbody2D>();
         this.levelManager = FindObjectOfType<LevelsManager>();
     }
 
     public IEnumerator Play(int level)
     {
         this.currentLevel = this.levelManager.Levels.Skip(level).First();
+        this.currentLevelIndex = level;
 
         yield return this.currentLevel.Load();
         this.currentLevel.Finished.
             Delay(TimeSpan.FromSeconds(0.5)).
-            Subscribe(_ => this.StartCoroutine(this.NextLevel(level)));
+            Subscribe(_ => this.StartCoroutine(this.NextLevel()));
     }
 
-    private IEnumerator NextLevel(int currentLevel)
+    private IEnumerator NextLevel()
     {
+        this.currentLevelIndex++;
         yield return this.currentLevel.Unload();
-        yield return this.Play(currentLevel + 1);
+        yield return this.Play(this.currentLevelIndex);
     }
 
     public IEnumerator LanuchBullet(Vector3 startPosition, Vector3 direction)
     {
-        this.BulletRigibody.velocity = Vector3.zero;
-        this.Bullet.transform.localPosition = Vector3.zero;
-        this.Bullet.transform.localScale = Vector3.zero;
-        this.Bullet.Enable();
+        yield return this.Bullet.Launch(startPosition, direction);        
 
-        yield return Parallel.Create(
-                    this.Bullet.Move(startPosition, this.BulletSpawTime, curve: Curves.CircularIn),
-                    this.Bullet.Scale(this.BulletSpawScale, this.BulletSpawTime, curve: Curves.CircularIn));
-
-        this.BulletRigibody.velocity = direction.normalized * this.BulletSpeed;
-        yield return new WaitUntil(() => this.Bullet.transform.position.magnitude > 30);
-        this.Bullet.Disable();
+        if (this.currentLevel.Points.All(o => o.Taken))
+            this.NextLevel();
     }
 }

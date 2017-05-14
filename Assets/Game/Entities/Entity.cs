@@ -13,8 +13,9 @@ namespace RED.Entities
     public class Entity : MonoBehaviour
     {
         public float SpawnTime;
+        public float HideTime;
 
-        public IEnumerator Show()
+        public virtual IEnumerator Show()
         {
             this.Enable();
             var position = this.gameObject.transform.localPosition;
@@ -27,10 +28,10 @@ namespace RED.Entities
                                    this.gameObject.Scale(scale, this.SpawnTime, curve: Curves.BounceOut));
         }
 
-        public IEnumerator Hide()
+        public virtual IEnumerator Hide()
         {
-            yield return Parallel.Create(this.gameObject.Move(Vector3.zero, this.SpawnTime, curve: Curves.CircularIn),
-                                   this.gameObject.Scale(Vector3.zero, this.SpawnTime, curve: Curves.CircularIn));
+            yield return Parallel.Create(this.gameObject.Move(Vector3.zero, this.HideTime, curve: Curves.CircularOut),
+                                   this.gameObject.Scale(Vector3.zero, this.HideTime, curve: Curves.CircularOut));
             this.Disable();
         }
 

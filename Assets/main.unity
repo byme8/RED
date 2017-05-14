@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -264,7 +264,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -311
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_SizeDelta.x
@@ -280,7 +280,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_AnchorMax.x
@@ -288,7 +288,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_Pivot.x
@@ -300,6 +300,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11421284, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_Text
+      value: Save
+      objectReference: {fileID: 0}
+    - target: {fileID: 121282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
+      propertyPath: m_Name
       value: Save
       objectReference: {fileID: 0}
     m_RemovedComponents: []

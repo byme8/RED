@@ -16,20 +16,17 @@ namespace UserInput
 
             while (true)
             {
-                Debug.LogError("Start");
                 yield return inputProvider.GetFirstPoint();
                 var firstPosition = inputProvider.Position;
 
                 yield return inputProvider.GetSecondPoint();
                 var secondPosition = inputProvider.Position;
-                Debug.LogError("Finish");
 
                 var direction = secondPosition - firstPosition;
                 var distance = direction.magnitude;
 
                 if (distance > 0.5)
                 {
-                    Debug.LogError("Launch bullet");
                     yield return gameController.LanuchBullet(firstPosition, direction);
                     continue;
                 }
@@ -44,12 +41,8 @@ namespace UserInput
         private IInputProvider CreateProvider()
         {
             if (Input.touchSupported)
-            {
-                Debug.LogError("Touch");
                 return new TouchInputProvider();
-            }
 
-            Debug.LogError("Mouse");
             return new MouseInputProvider();
         }
 
