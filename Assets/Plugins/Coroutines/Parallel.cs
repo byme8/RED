@@ -16,7 +16,7 @@ namespace Coroutines
                 yield return coroutine;
         }
 
-        public static IEnumerator ParallelCoroutines(this IEnumerable<IEnumerator> coroutines)
+        public static IEnumerator AsParallel(this IEnumerable<IEnumerator> coroutines)
         {
             yield return Create(coroutines.ToArray());
         }

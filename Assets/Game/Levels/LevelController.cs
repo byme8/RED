@@ -19,7 +19,7 @@ namespace RED.Levels
         public IEnumerator Show()
         {
             this.entities = GameObject.FindObjectsOfType<Entity>();
-            yield return this.entities.Select(o => o.Show()).ParallelCoroutines();
+            yield return this.entities.Select(o => o.Show()).AsParallel();
             this.UserInputController.StartHandeling();
         }
 
@@ -31,7 +31,7 @@ namespace RED.Levels
 
         public  IEnumerator Hide()
         {
-            yield return this.entities.Select(o => o.Hide()).ParallelCoroutines();
+            yield return this.entities.Select(o => o.Hide()).AsParallel();
         }
     }
 }
