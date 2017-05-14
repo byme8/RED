@@ -12,7 +12,7 @@ namespace Tweens
 {
     public static class ScaleTween
     {
-        public static ICoroutine Scale(this GameObject gameObject,
+        public static IEnumerator Scale(this GameObject gameObject,
                 Vector3 scale,
                 float time,
                 float delay = 0,
@@ -22,12 +22,12 @@ namespace Tweens
 
             return Sequence.Create(
                 Delay.Create(delay),
-                CoroutinesFactory.StartSuperFastCoroutine(ProcessScaling(
+                ProcessScaling(
                     transform,
                     scale,
                     time,
                     delay,
-                    curve)));
+                    curve));
         }
 
         private static IEnumerator ProcessScaling(

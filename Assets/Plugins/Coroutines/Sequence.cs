@@ -10,21 +10,10 @@ namespace Coroutines
 {
     public static class Sequence
     {
-        public static ICoroutine Create(params ICoroutine[] coroutines)
-        {
-            return CoroutinesFactory.StartSuperFastCoroutine(ProcessSequnce(coroutines));
-        }
-
-        private static IEnumerator ProcessSequnce(ICoroutine[] coroutines)
+        public static IEnumerator Create(params IEnumerator[] coroutines)
         {
             foreach (var coroutine in coroutines)
-                while (coroutine.keepWaiting)
-                {
-                    if (!coroutine.MoveNext())
-                        coroutine.Done();
-
-                    yield return null;
-                }
+                yield return coroutine;
         }
     }
 }

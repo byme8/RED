@@ -5,18 +5,8 @@ using UnityEngine;
 
 public static class Delay
 {
-    public static ICoroutine Create(float delay)
+    public static IEnumerator Create(float delay)
     {
-        return CoroutinesFactory.StartSuperFastCoroutine(ProcessDelay(delay));
-    }
-    
-    private static IEnumerator ProcessDelay(float delay)
-    {
-        var timeSpent = 0.0f;
-        while (timeSpent < delay)
-        {
-            timeSpent += Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(delay);
     }
 }

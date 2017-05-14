@@ -8,7 +8,7 @@ namespace Tweens
 {
     public static class MoveTween
     {
-        public static ICoroutine Move(this GameObject gameObject,
+        public static IEnumerator Move(this GameObject gameObject,
                 Vector3 position,
                 float time,
                 float delay = 0,
@@ -18,19 +18,17 @@ namespace Tweens
 
             return Sequence.Create(
                 Delay.Create(delay),
-                CoroutinesFactory.StartSuperFastCoroutine(ProcessMoving(
+                ProcessMoving(
                     transform,
                     position,
                     time,
-                    delay,
-                    curve)));
+                    curve));
         }
 
         private static IEnumerator ProcessMoving(
             Transform transform,
             Vector3 position,
             float time,
-            float delay,
             Curve curve)
         {
             if (curve == null)
