@@ -12,7 +12,9 @@ namespace RED.Entities
 {
     public class Entity : MonoBehaviour
     {
+        public float SpawnDelay;
         public float SpawnTime;
+
         public float HideTime;
 
         public virtual IEnumerator Show()
@@ -24,8 +26,8 @@ namespace RED.Entities
             this.gameObject.transform.localPosition = Vector3.zero;
             this.gameObject.transform.localScale = Vector3.zero;
 
-            yield return Parallel.Create(this.gameObject.Move(position, this.SpawnTime, curve: Curves.BounceOut),
-                                   this.gameObject.Scale(scale, this.SpawnTime, curve: Curves.BounceOut));
+            yield return Parallel.Create(this.gameObject.Move(position, this.SpawnTime, this.SpawnDelay, Curves.BounceOut),
+                                   this.gameObject.Scale(scale, this.SpawnTime, this.SpawnDelay, Curves.BounceOut));
         }
 
         public virtual IEnumerator Hide()

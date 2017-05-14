@@ -147,6 +147,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114175155830005236, guid: 74f027b9b47e8c14bb2efaf855e9e048,
+        type: 2}
+      propertyPath: SpawnDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74f027b9b47e8c14bb2efaf855e9e048, type: 2}
   m_IsPrefabParent: 0
@@ -250,6 +255,11 @@ Prefab:
     - target: {fileID: 1976023895583902, guid: 043b2b24efcdb014090fb066e877f86a, type: 2}
       propertyPath: m_Name
       value: Obstacle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114077764991443268, guid: 043b2b24efcdb014090fb066e877f86a,
+        type: 2}
+      propertyPath: SpawnDelay
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 043b2b24efcdb014090fb066e877f86a, type: 2}
