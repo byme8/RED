@@ -22,7 +22,7 @@ namespace Coroutines
             return coroutine;
         }
 
-        public static Coroutine StartCoroutine(IEnumerator coroutine)
+        public static Coroutine StartCoroutine(this IEnumerator coroutine)
         {
             return CoroutineHolder.AddCoroutine(coroutine);
         }
