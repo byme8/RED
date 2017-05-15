@@ -261,6 +261,15 @@ Prefab:
       propertyPath: SpawnDelay
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 23230791864943764, guid: 043b2b24efcdb014090fb066e877f86a,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976023895583902, guid: 043b2b24efcdb014090fb066e877f86a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 043b2b24efcdb014090fb066e877f86a, type: 2}
   m_IsPrefabParent: 0
