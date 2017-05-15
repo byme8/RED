@@ -26,14 +26,14 @@ namespace RED.Entities
             this.gameObject.transform.localPosition = Vector3.zero;
             this.gameObject.transform.localScale = Vector3.zero;
 
-            yield return Parallel.Create(this.gameObject.Move(position, this.SpawnTime, this.SpawnDelay, Curves.BounceOut),
-                                   this.gameObject.Scale(scale, this.SpawnTime, this.SpawnDelay, Curves.BounceOut));
+            yield return Parallel.Create(this.gameObject.Move(position, this.SpawnTime, this.SpawnDelay, Curves.BackOut),
+                                   this.gameObject.Scale(scale, this.SpawnTime, this.SpawnDelay, Curves.BackOut));
         }
 
         public virtual IEnumerator Hide()
         {
-            yield return Parallel.Create(this.gameObject.Move(Vector3.zero, this.HideTime, curve: Curves.CircularOut),
-                                   this.gameObject.Scale(Vector3.zero, this.HideTime, curve: Curves.CircularOut));
+            yield return Parallel.Create(this.gameObject.Move(Vector3.zero, this.HideTime, this.SpawnDelay, Curves.BackIn),
+                                   this.gameObject.Scale(Vector3.zero, this.HideTime, this.SpawnDelay, Curves.BackIn));
             this.Disable();
         }
 
