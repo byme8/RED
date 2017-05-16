@@ -26,15 +26,7 @@ namespace UserInput
                 var distance = direction.magnitude;
 
                 if (distance > 0.5)
-                {
                     yield return gameController.LanuchBullet(firstPosition, direction);
-                    continue;
-                }
-                else
-                {
-                    Debug.Log("Toggle UI");
-                    //this.ToggleUI();
-                }
             }
         }
 

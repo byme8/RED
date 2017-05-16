@@ -14,6 +14,7 @@ public class MainMenuController : MonoBehaviour
 {
     public Page SettingsPage;
     public Page MainMenuPage;
+    public Page GamePage;
 
     public GameController GameController;
     public Navigator Navigator;
@@ -25,7 +26,7 @@ public class MainMenuController : MonoBehaviour
 
     private IEnumerator PlayCoroutine()
     {
-        yield return this.MainMenuPage.Hide();
+        yield return this.Navigator.Navigate(this.GamePage);
         yield return this.GameController.Play(0);
     }
 
