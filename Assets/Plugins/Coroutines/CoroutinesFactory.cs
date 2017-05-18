@@ -26,5 +26,10 @@ namespace Coroutines
         {
             return CoroutineHolder.AddCoroutine(coroutine);
         }
+
+        public static void Stop(this Coroutine coroutine)
+        {
+            CoroutineHolder.StopCoroutine(coroutine);
+        }
     }
 }

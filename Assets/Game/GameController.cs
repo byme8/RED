@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq;
 using Coroutines;
+using RED.Coroutines;
 using RED.Entities;
 using RED.Game.Entities;
 using RED.Levels;
@@ -19,6 +20,7 @@ public class GameController : MonoBehaviour
     private Bullet Bullet;
 
     private int currentLevelIndex;
+    private bool loadingInProgress;
 
     private void Start()
     {
@@ -29,6 +31,14 @@ public class GameController : MonoBehaviour
 
     public IEnumerator Play(int level)
     {
+        if (this.loadingInProgress)
+            yield break;
+
+        this.loadingInProgress = true;
+
+        if (this.CurrentLevel != null)
+            yield return new[] { this.CurrentLevel.Unload(), this.Bullet.Hide() }.AsParallel();
+
         this.CurrentLevel = this.levelManager.Levels.Skip(level).First();
         this.currentLevelIndex = level;
 
@@ -36,6 +46,13 @@ public class GameController : MonoBehaviour
         this.CurrentLevel.Finished.
             Delay(TimeSpan.FromSeconds(0.5)).
             Subscribe(_ => this.StartCoroutine(this.NextLevel()));
+
+        this.loadingInProgress = false;
+    }
+
+    public IEnumerator Restart()
+    {
+        yield return this.Play(this.currentLevelIndex);
     }
 
     private IEnumerator NextLevel()
@@ -44,14 +61,13 @@ public class GameController : MonoBehaviour
         if (this.currentLevelIndex >= this.levelManager.Levels.Count())
             this.currentLevelIndex = 0;
 
-        yield return new[]{ this.CurrentLevel.Unload(), this.Bullet.Hide() }.AsParallel();
         this.Bullet.Disable();
         yield return this.Play(this.currentLevelIndex);
     }
 
     public IEnumerator LanuchBullet(Vector3 startPosition, Vector3 direction)
     {
-        yield return this.Bullet.Launch(startPosition, direction);        
+        yield return this.Bullet.Launch(startPosition, direction);
 
         if (this.CurrentLevel.Points.All(o => o.Taken))
             this.NextLevel();
