@@ -2,15 +2,10 @@
 using System.Collections;
 using System.Linq;
 using Coroutines;
-using RED.Coroutines;
 using RED.Entities;
-using RED.Game.Entities;
 using RED.Levels;
-using Tweens;
 using UniRx;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UserInput;
 
 public class GameController : MonoBehaviour
 {
