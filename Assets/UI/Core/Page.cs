@@ -36,4 +36,13 @@ namespace RED.UI.Core
                 AsParallel();
         }
     }
+
+    public static class PageExtentions
+    {
+        public static IEnumerator Navigate(this Page page)
+        {
+            yield return Navigator.Instance.Navigate(page);
+        }
+    }
+
 }

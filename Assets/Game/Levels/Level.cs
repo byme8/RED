@@ -6,9 +6,13 @@ using System.Text;
 using Coroutines;
 using RED.Entities;
 using UniRx;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 
 namespace RED.Levels
 {
@@ -16,6 +20,7 @@ namespace RED.Levels
     {
     }
 
+#if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(SceneAttribute))]
     public class SceneDrawer : PropertyDrawer
     {
@@ -65,9 +70,11 @@ namespace RED.Levels
             return null;
         }
     }
+#endif
 
     public class Level : MonoBehaviour
     {
+        public int Index;
         public string Name;
         public Category Category;
 

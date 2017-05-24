@@ -31,5 +31,10 @@ namespace UnityEngine
         {
             return GameObject.Instantiate(gameObject);
         }
+
+        public static TComponent Clone<TComponent>(this GameObject gameObject)
+        {
+            return GameObject.Instantiate(gameObject).GetComponent<TComponent>();
+        }
     }
 }

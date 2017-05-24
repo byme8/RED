@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
 {
     public Level CurrentLevel;
     public GameObject BulletTemplate;
-    private LevelsManager levelManager;
+    private LevelManager levelManager;
     private Bullet Bullet;
 
     private int currentLevelIndex;
@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
     {
         this.Bullet = this.BulletTemplate.Clone().GetComponent<Bullet>();
         this.Bullet.Disable();
-        this.levelManager = FindObjectOfType<LevelsManager>();
+        this.levelManager = FindObjectOfType<LevelManager>();
     }
 
     public IEnumerator Play(int level)
@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
         this.loadingInProgress = true;
 
         if (this.CurrentLevel != null)
-            yield return new[] { this.CurrentLevel.Unload(), this.Bullet.Hide() }.AsParallel();
+            yield return this.Unload();
 
         this.CurrentLevel = this.levelManager.Levels.Skip(level).First();
         this.currentLevelIndex = level;
@@ -58,6 +58,13 @@ public class GameController : MonoBehaviour
 
         this.Bullet.Disable();
         yield return this.Play(this.currentLevelIndex);
+    }
+
+    public IEnumerator Unload()
+    {
+        yield return new[] { this.CurrentLevel.Unload(), this.Bullet.Hide() }.AsParallel();
+        this.CurrentLevel = null;
+        this.currentLevelIndex = -1;
     }
 
     public IEnumerator LanuchBullet(Vector3 startPosition, Vector3 direction)

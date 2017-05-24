@@ -12,27 +12,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    public Page SettingsPage;
-    public Page MainMenuPage;
-    public Page GamePage;
-
     public GameController GameController;
-    public Navigator Navigator;
 
     public void Play()
     {
-        this.PlayCoroutine().StartCoroutine();
-    }
-
-    private IEnumerator PlayCoroutine()
-    {
-        yield return this.Navigator.Navigate(this.GamePage);
-        yield return this.GameController.Play(0);
+        Navigator.Instance.CategoriesPage.Navigate().StartCoroutine();
     }
 
     public void Settings()
     {
-        this.Navigator.Navigate(this.SettingsPage).StartCoroutine();
+        Navigator.Instance.SettingsPage.Navigate().StartCoroutine();
     }
 
     public void Quit()

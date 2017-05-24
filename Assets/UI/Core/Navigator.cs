@@ -12,7 +12,17 @@ namespace RED.UI.Core
 {
     public class Navigator : MonoBehaviour
     {
+        public static Navigator Instance;
+
         public Page StartPage;
+        public Page GamePage;
+        public Page SettingsPage;
+        public Page CategoriesPage;
+
+        public Navigator()
+        {
+            Instance = this;
+        }
 
         private void Start()
         {
@@ -21,6 +31,7 @@ namespace RED.UI.Core
 
         public readonly BehaviorSubject<Page> CurrentPage
             = new BehaviorSubject<Page>(null);
+
         private bool Navigating;
 
         public IEnumerator Navigate(Page page)

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Coroutines;
+using RED.UI.Core;
 using UnityEngine;
 
 namespace RED.UI
@@ -13,7 +15,13 @@ namespace RED.UI
 
         public void ToMainMenu()
         {
-            Debug.Log("Test");
+            this.ToMainMenuCoroutine().StartCoroutine();
+        }
+
+        private IEnumerator ToMainMenuCoroutine()
+        {
+            yield return this.GameController.Unload();
+            yield return Navigator.Instance.CategoriesPage.Navigate();
         }
 
         public void Restart()
