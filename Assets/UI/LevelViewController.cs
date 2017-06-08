@@ -15,7 +15,9 @@ public class LevelViewController : MonoBehaviour
 
     private void Start()
     {
-        this.Text.text = this.Level.Index.ToString();
+        this.GameController = GameObject.FindObjectOfType<GameController>();
+
+        this.Text.text = this.Level.Order.ToString();
     }
 
     public void Play()

@@ -75,6 +75,7 @@ namespace RED.Levels
     public class Level : MonoBehaviour
     {
         public int Index;
+        public int Order;
         public string Name;
         public Category Category;
 
