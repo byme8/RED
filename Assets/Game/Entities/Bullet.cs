@@ -16,6 +16,14 @@ namespace RED.Entities
         public float BulletSpeed;
         public Vector3 BulletSpawScale;
 
+        private SoundsManager SoundsManager;
+
+
+        private void Start()
+        {
+            this.SoundsManager = GameObject.FindObjectOfType<SoundsManager>();
+        }
+
         public IEnumerator Launch(Vector3 startPosition, Vector3 direction)
         {
             this.Rigibody.velocity = Vector3.zero;
@@ -41,6 +49,11 @@ namespace RED.Entities
             {
                 point.Take();
             }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            this.SoundsManager.PlayOnCollide();
         }
     }
 }
