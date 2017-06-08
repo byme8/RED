@@ -32,6 +32,9 @@ public class SoundsManager : MonoBehaviour
 
     public void PlayOnCollide()
     {
+        if (!GameSettings.Instance.Sounds.Value)
+            return;
+
         if (this.noteIndex == this.notesToPlay.Length)
             this.noteIndex = 0;
 
