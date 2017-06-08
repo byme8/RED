@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Coroutines;
 using RED.Levels;
+using RED.UI.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,4 +17,5 @@ public class CategoryViewController : MonoBehaviour
     {
         this.Text.text = this.Category.Name;
     }
+
 }

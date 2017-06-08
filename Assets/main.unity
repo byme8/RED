@@ -1611,7 +1611,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -400
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_SizeDelta.x
@@ -1619,7 +1619,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_AnchorMin.x
@@ -1795,10 +1795,10 @@ Prefab:
     - target: {fileID: 11421280, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1475665832}
+      objectReference: {fileID: 1603655254}
     - target: {fileID: 11421280, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
+      value: ToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 11421280, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1899,7 +1899,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_SizeDelta.x
@@ -1907,7 +1907,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_AnchorMin.x
@@ -3530,7 +3530,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_SizeDelta.x
@@ -3538,7 +3538,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 22421282, guid: e58a0a1e46c174d4a9373fa590558eb0, type: 2}
       propertyPath: m_AnchorMin.x
@@ -3753,6 +3753,7 @@ GameObject:
   - component: {fileID: 1603655251}
   - component: {fileID: 1603655250}
   - component: {fileID: 1603655253}
+  - component: {fileID: 1603655254}
   m_Layer: 5
   m_Name: Categories
   m_TagString: Untagged
@@ -3849,6 +3850,17 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &1603655254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603655248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6530ee23f8c1744859bd9e65eb4e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1670612705
 GameObject:
   m_ObjectHideFlags: 0
