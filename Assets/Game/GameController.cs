@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
         if (this.CurrentLevel != null)
             yield return this.Unload();
 
-        this.CurrentLevel = this.levelManager.Levels.Skip(level).First();
+        this.CurrentLevel = this.levelManager.Levels.First(o => o.Index == level);
         this.currentLevelIndex = level;
 
         yield return this.CurrentLevel.Load();

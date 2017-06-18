@@ -18,7 +18,7 @@ public class CategoriesViewController : MonoBehaviour
         {
             var category = this.CategoryViewTemplate.Clone<CategoryViewController>();
             category.transform.SetParent(this.Root);
-            category.Levels = item.OrderBy(o => o.Order);
+            category.Levels = item.OrderBy(o => o.Order).ToArray();
             category.Category = item.Key;
         }
     }

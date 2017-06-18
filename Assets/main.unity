@@ -2079,7 +2079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: -1
+  m_MinHeight: 60
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -3222,7 +3222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afb02d46e57b4d449959a5115953db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 1
+  Index: 0
   Order: 1
   Name: Begining
   Category: {fileID: 661852398}
@@ -3238,7 +3238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afb02d46e57b4d449959a5115953db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 2
+  Index: 4
   Order: 1
   Name: Real one
   Category: {fileID: 661852399}
@@ -3254,7 +3254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afb02d46e57b4d449959a5115953db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 3
+  Index: 2
   Order: 3
   Name: Some bounce
   Category: {fileID: 661852398}
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afb02d46e57b4d449959a5115953db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 2
+  Index: 1
   Order: 2
   Name: Two points
   Category: {fileID: 661852398}
@@ -3286,7 +3286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afb02d46e57b4d449959a5115953db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 4
+  Index: 3
   Order: 4
   Name: Quare
   Category: {fileID: 661852398}
@@ -3490,7 +3490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 150
+  m_MinHeight: 130
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -3512,7 +3512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 150
+  m_MinHeight: 130
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -3534,7 +3534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 150
+  m_MinHeight: 130
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -4235,10 +4235,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
 --- !u!1 &1495977284

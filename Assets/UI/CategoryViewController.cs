@@ -18,7 +18,7 @@ public class CategoryViewController : MonoBehaviour
 
     public Category Category;
 
-    public IOrderedEnumerable<Level> Levels
+    public Level[] Levels
     {
         get;
         set;
