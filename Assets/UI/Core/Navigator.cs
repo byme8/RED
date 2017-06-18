@@ -19,6 +19,7 @@ namespace RED.UI.Core
         public Page SettingsPage;
         public Page CategoriesPage;
         public Page FeedbackPage;
+        public Page AboutPage;
 
         public Navigator()
         {

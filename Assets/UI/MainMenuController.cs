@@ -33,4 +33,9 @@ public class MainMenuController : MonoBehaviour
     {
         Navigator.Instance.FeedbackPage.Navigate().StartCoroutine();
     }
+
+    public void About()
+    {
+        Navigator.Instance.AboutPage.Navigate().StartCoroutine();
+    }
 }
