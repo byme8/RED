@@ -18,6 +18,7 @@ namespace RED.UI.Core
         public Page GamePage;
         public Page SettingsPage;
         public Page CategoriesPage;
+        public Page FeedbackPage;
 
         public Navigator()
         {

@@ -28,4 +28,9 @@ public class MainMenuController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Feedback()
+    {
+        Navigator.Instance.FeedbackPage.Navigate().StartCoroutine();
+    }
 }
