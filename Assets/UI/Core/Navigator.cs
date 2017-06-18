@@ -39,12 +39,13 @@ namespace RED.UI.Core
         public IEnumerator Navigate(Page page)
         {
             if (this.Navigating)
-                yield break;
+                this.StopAllCoroutines();
 
             this.Navigating = true;
 
-            yield return new[] { this.CurrentPage.Value.Hide(), page.Show(0.2f) }.AsParallel();
+            this.StartCoroutine(this.CurrentPage.Value.Hide());
             this.CurrentPage.OnNext(page);
+            yield return this.StartCoroutine(page.Show(0.2f));
 
             this.Navigating = false;
         }
