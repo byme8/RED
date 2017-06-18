@@ -26,8 +26,8 @@ namespace RED.Entities
             this.gameObject.transform.localPosition = Vector3.zero;
             this.gameObject.transform.localScale = Vector3.zero;
 
-            yield return Parallel.Create(this.gameObject.Move(position, this.SpawnTime, this.SpawnDelay, Curves.BackOut),
-                                   this.gameObject.Scale(scale, this.SpawnTime, this.SpawnDelay, Curves.BackOut));
+            yield return Parallel.Create(this.gameObject.Move(position, this.SpawnTime, this.SpawnDelay, Curves.ElasticOut),
+                                   this.gameObject.Scale(scale, this.SpawnTime, this.SpawnDelay, Curves.ElasticOut));
         }
 
         public virtual IEnumerator Hide()
