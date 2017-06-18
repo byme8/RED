@@ -12,7 +12,10 @@ public class CategoryViewController : MonoBehaviour
 {
     public GameObject LevelTemplate;
 
-    public Text Text;
+    public Text CategotyName;
+    public Text CategotyDescription;
+    public Transform Root;
+
     public Category Category;
 
     public IOrderedEnumerable<Level> Levels
@@ -23,13 +26,14 @@ public class CategoryViewController : MonoBehaviour
 
     public void Start()
     {
-        this.Text.text = this.Category.Name;
+        this.CategotyName.text = this.Category.Name;
+        this.CategotyDescription.text = this.Category.Description;
 
         foreach (var level in this.Levels)
         {
             var levelView = this.LevelTemplate.Clone<LevelViewController>();
             levelView.Level = level;
-            levelView.transform.SetParent(this.transform);
+            levelView.transform.SetParent(this.Root);
         }
     }
 
